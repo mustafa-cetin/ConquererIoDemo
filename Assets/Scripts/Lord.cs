@@ -116,12 +116,13 @@ public class Lord : MonoBehaviour
         }
     }
     private void SpeedoSystem(){
-        speed=(1/(float)soldierCount)*100;
+        speed=(1/(float)(soldierCount+1))*100;
         if (speed>=5)
         {
             speed=5;
         }
-        speed=speed*100;
+
+        speed *= 1.5f;
     }
     
     public bool canConquer(Castle castle){

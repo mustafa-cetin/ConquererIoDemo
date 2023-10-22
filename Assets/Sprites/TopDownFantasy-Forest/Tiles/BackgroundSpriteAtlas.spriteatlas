@@ -31,6 +31,7 @@ SpriteAtlas:
       m_CrunchedCompression: 0
       m_AllowsAlphaSplitting: 0
       m_Overridden: 0
+      m_IgnorePlatformSupport: 0
       m_AndroidETC2FallbackOverride: 0
       m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
@@ -48,6 +49,99 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1188117546
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1806985456
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1889877913
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 982454222
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -886317513
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 670746489
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 117731558
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -774433325
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 910081312
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1171081047
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1806534402
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -549411650
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1926576342
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 675423106
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 723406526
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1226314188
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -126249641
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 679569277
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1832310975
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 143242053
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 578150106
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1062398196
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1324894716
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1966369467
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -760018109
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 642807099
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -311458115
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1811244885
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -2021274985
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -45580042
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -135088994
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -638284801
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -281561340
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1204015373
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1658552789
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1506220203
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1509783800
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1152563044
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1300809828
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1791567495
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1884534121
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1646467176
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1621389911
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1541066469
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -3016526
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -2112619007
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1716140595
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 512644613
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1559673454
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -853224196
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1505027972
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 777196106
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1821131420
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -253566876
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -817758253
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1773960685
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 773507840
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1906576237
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 553388452
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 285038584
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1293721790
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 628255380
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1213109039
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1513496025
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1717770993
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -541129924
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 2140369664
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1042947613
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1019497854
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1113207682
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1484002922
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -928824530
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1901543116
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1705042497
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1448720546
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -2036991218
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1113596412
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1058800002
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 589661205
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 426905322
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -751913963
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1323866311
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1579735995
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 263840946
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 1757251192
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 781962529
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1872883278
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1889597686
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 709658855
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1903650986
+    - b0f59ec3dfb5daa42aee313f59fcae0b: -1938908434
+    - b0f59ec3dfb5daa42aee313f59fcae0b: 981111880
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: -1188117546, guid: b0f59ec3dfb5daa42aee313f59fcae0b, type: 3}

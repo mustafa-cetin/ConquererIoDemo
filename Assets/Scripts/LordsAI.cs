@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -172,8 +173,13 @@ public class LordsAI : MonoBehaviour
 
     void Update()
     {
+    }
+
+    private void FixedUpdate()
+    {
         LordMovement();
     }
+
     private void LordMovement()
     {
         if (!lord.onConquest)
@@ -186,7 +192,7 @@ public class LordsAI : MonoBehaviour
             {
                 Vector3 difference = DeterminingClosestUnderAttackCastle().Conquerer.transform.position - this.transform.position;
                 difference = difference.normalized;
-                rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed;
+                rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
                 Debug.Log(lord.name+"kalesi saldırı altında koşuyor");
             }
         }    
@@ -197,8 +203,8 @@ public class LordsAI : MonoBehaviour
             {
                 Vector3 difference = DeterminingClosestEnemy().transform.position - this.transform.position;
                 difference=difference.normalized;
-               // this.transform.position += difference.normalized * Time.deltaTime * speed;
-               rb.velocity=new Vector2(difference.x,difference.y)*Time.deltaTime*lord.speed;
+               // this.transform.position += difference.normalized * 1 * speed;
+               rb.velocity=new Vector2(difference.x,difference.y)*1*lord.speed;
                Debug.Log(lord.name+"asker sayısı dusuk en yakın dusmana kosuyor.");
             }
             else if (DeterminingClosestEnemy().GetComponent<Lord>().soldierCount >= this.GetComponent<Lord>().soldierCount)
@@ -213,13 +219,13 @@ public class LordsAI : MonoBehaviour
                         Debug.Log(lord.name+"koyden asker toplamaya gıdıyor");
                         Vector3 difference = DeterminingClosestVillage().transform.position - this.transform.position;
                         difference = difference.normalized;
-                        rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed;
+                        rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
                     }
                     else
                     {
                         Vector3 difference = DeterminingClosestEnemy().transform.position - this.transform.position;
                         difference = difference.normalized;
-                        rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed * -1;
+                        rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed * -1;
                         Debug.Log(lord.name+" adam daha yakında kaçıyor");
                     }
                 }
@@ -227,7 +233,7 @@ public class LordsAI : MonoBehaviour
                 {
                     Vector3 difference = DeterminingClosestEnemy().transform.position - this.transform.position;
                     difference = difference.normalized;
-                    rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed * -1;
+                    rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed * -1;
                     Debug.Log(lord.name+"köy yok admın canı daha fazla kaçıyor");
                 }
                 
@@ -241,13 +247,13 @@ public class LordsAI : MonoBehaviour
                 Debug.Log(lord.name+"kale fethetmeye gidiyoruz");
             Vector3 difference = DeterminingClosestCastle().transform.position - this.transform.position;
             difference = difference.normalized;
-            rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed;
+            rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
             }else
             {
                 Debug.Log(lord.name+"köyden asker toplamaya");
             Vector3 difference = DeterminingClosestVillage().transform.position - this.transform.position;
             difference=difference.normalized;
-            rb.velocity=new Vector2(difference.x,difference.y)*Time.deltaTime*lord.speed;
+            rb.velocity=new Vector2(difference.x,difference.y)*1*lord.speed;
             }
         }
         else if (DeterminingClosestVillage() != null)
@@ -255,7 +261,7 @@ public class LordsAI : MonoBehaviour
             Debug.Log(lord.name+"köyden asker toplamaya");
             Vector3 difference = DeterminingClosestVillage().transform.position - this.transform.position;
             difference=difference.normalized;
-            rb.velocity=new Vector2(difference.x,difference.y)*Time.deltaTime*lord.speed;
+            rb.velocity=new Vector2(difference.x,difference.y)*1*lord.speed;
         }
 
         else if (DeterminingClosestCastle() != null)
@@ -263,7 +269,7 @@ public class LordsAI : MonoBehaviour
             Debug.Log(lord.name+"kale fethetmeye gidiyoruz");
             Vector3 difference = DeterminingClosestCastle().transform.position - this.transform.position;
             difference = difference.normalized;
-            rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed;
+            rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
         }
         else
         {rb.velocity=Vector2.zero;
@@ -274,7 +280,8 @@ public class LordsAI : MonoBehaviour
             Debug.Log(lord.name+"kale fethetmeye gidiyoruz");
             Vector3 difference = DeterminingClosestCastle().transform.position - this.transform.position;
             difference = difference.normalized;
-            rb.velocity = new Vector2(difference.x, difference.y) * Time.deltaTime * lord.speed;
+            rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
         }
-        }
+
+    }
 }
