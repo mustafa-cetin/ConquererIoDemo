@@ -31,8 +31,12 @@ public class PlayerManager : MonoBehaviour
     public bool playedSong;
     private void Start() {
         audioSource=GetComponent<AudioSource>();
-        audioSource.clip=warSong;
-        audioSource.Play();
+        if (PlayerPrefs.GetInt("music")==1)
+        {
+            audioSource.clip=warSong;
+            audioSource.Play();
+        }
+   
         castles=GameObject.FindGameObjectsWithTag("Castle");
         playedSong=false;
        StartCoroutine(Texter(startText,"CONQUER ALL CASTLES"));
@@ -53,8 +57,11 @@ public class PlayerManager : MonoBehaviour
         text.gameObject.SetActive(false);
     }
     public void killCountIncrease(){
-        
+        if (PlayerPrefs.GetInt("soundEffects")==1)
+        {
             audioSource.PlayOneShot(bloodySword);
+        }
+            
         killCount+=1;
         killCountText.text="Kill: "+killCount; 
     }
@@ -71,11 +78,20 @@ public class PlayerManager : MonoBehaviour
         Time.timeScale=0;
     }
     public void Conquered(){
+        if (PlayerPrefs.GetInt("soundEffects")==1)
+        {
+            
+            audioSource.PlayOneShot(swordClash);
+        }
         audioSource.PlayOneShot(swordClash);
         StartCoroutine(Texter(soldierText,"Kale fethedildi."));
     }
     public void onDie(){
-        audioSource.PlayOneShot(maleHurt);
+        if (PlayerPrefs.GetInt("soundEffects")==1)
+        {
+            
+            audioSource.PlayOneShot(maleHurt);
+        }
     }
     public void WinCheck(){
         if (player.GetComponent<Lord>().castles.Count==castles.Length)

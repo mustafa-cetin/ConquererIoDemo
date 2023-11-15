@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     rb=GetComponent<Rigidbody2D>();
     lord=GetComponent<Lord>();
     firstClickedPosition = Vector3.zero;
+    worldPosition = Vector3.zero;
     }
 
     // Update is called once per frame
