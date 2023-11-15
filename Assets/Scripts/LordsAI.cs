@@ -171,10 +171,6 @@ public class LordsAI : MonoBehaviour
     rb=GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-    }
-
     private void FixedUpdate()
     {
         LordMovement();
