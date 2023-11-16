@@ -19,6 +19,7 @@ public class CameraFollowing : MonoBehaviour
         }
     }
     private void Update() {
+        
         if (target==null)
         {
          playerManager.Death();

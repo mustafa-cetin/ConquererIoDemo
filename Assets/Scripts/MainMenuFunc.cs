@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuFunc : MonoBehaviour
 {
+
     [SerializeField]
     private Color offColor;
     [SerializeField]
@@ -89,7 +92,6 @@ public class MainMenuFunc : MonoBehaviour
             soundEffectsImage.color = Color.white;
         }
         
-        //SceneManager.LoadScene(0);
     }
     public void PressedTutorial(){
         
