@@ -94,8 +94,11 @@ public class MainMenuFunc : MonoBehaviour
         
     }
     public void PressedTutorial(){
+        SceneManager.LoadScene(2);
         
-        //SceneManager.LoadScene(0);
     }
+
+    
+    
 
 }
