@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 83465c2cc6a876449b45dd6fa810a373
   - enabled: 1
-    path: Assets/Scenes/Hexa 1.unity
+    path: Assets/Scenes/Game Scene.unity
     guid: 9f6572298727a76418b849b55fe04d14
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity

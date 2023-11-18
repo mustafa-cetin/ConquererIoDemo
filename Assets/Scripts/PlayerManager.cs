@@ -7,21 +7,21 @@ public class PlayerManager : MonoBehaviour
 {
     public Transform player;
     public TextMeshProUGUI soldierText;
-    
+
     public TextMeshProUGUI killCountText;
     public GameObject endGameScreen;
     private float Timer=2f;
     public int killCount=0;
-    
-    
+
+
     public TextMeshProUGUI endKillText;
-    
+
     public TextMeshProUGUI winKillText;
     public GameObject endWinGameScreen;
 
     public TextMeshProUGUI startText;
     private AudioSource audioSource;
-    
+
     public AudioClip warSong;
     public AudioClip swordClash;
     public AudioClip bloodySword;
@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
             audioSource.clip=warSong;
             audioSource.Play();
         }
-   
+
         castles=GameObject.FindGameObjectsWithTag("Castle");
         playedSong=false;
        StartCoroutine(Texter(startText,"CONQUER ALL CASTLES"));
@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
 
     public void AlertSoldierAdd(int soldierCount){
        StartCoroutine(Texter(soldierText,"+"+soldierCount));
-        
+
     }
     private void Update() {
         WinCheck();
@@ -61,26 +61,29 @@ public class PlayerManager : MonoBehaviour
         {
             audioSource.PlayOneShot(bloodySword);
         }
-            
+
         killCount+=1;
-        killCountText.text="Kill: "+killCount; 
+        killCountText.text="Kill: "+killCount;
+        PlayerPrefs.SetInt("killCount",killCount);
     }
     public void Death(){
         audioSource.Stop();
         endKillText.text="KILL COUNT: "+killCount.ToString();
+        PlayerPrefs.SetInt("killCount",killCount);
         endGameScreen.SetActive(true);
         Time.timeScale=0;
     }
     public void Win(){
         audioSource.Stop();
         endKillText.text="KILL COUNT: "+killCount.ToString();
+        PlayerPrefs.SetInt("killCount",killCount);
         endGameScreen.SetActive(true);
         Time.timeScale=0;
     }
     public void Conquered(){
         if (PlayerPrefs.GetInt("soundEffects")==1)
         {
-            
+
             audioSource.PlayOneShot(swordClash);
         }
         audioSource.PlayOneShot(swordClash);
@@ -89,7 +92,7 @@ public class PlayerManager : MonoBehaviour
     public void onDie(){
         if (PlayerPrefs.GetInt("soundEffects")==1)
         {
-            
+
             audioSource.PlayOneShot(maleHurt);
         }
     }
@@ -98,11 +101,12 @@ public class PlayerManager : MonoBehaviour
         {
             if (!playedSong)
             {
-                
+
         audioSource.PlayOneShot(questSucceed);
         playedSong=true;
             }
         winKillText.text="KILL COUNT: "+killCount.ToString();
+        PlayerPrefs.SetInt("killCount",killCount);
         endWinGameScreen.SetActive(true);
         Time.timeScale=0;
         }

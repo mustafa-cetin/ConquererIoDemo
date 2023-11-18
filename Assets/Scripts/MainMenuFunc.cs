@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -16,6 +17,8 @@ public class MainMenuFunc : MonoBehaviour
     private Image musicImage;
     [SerializeField]
     private Image soundEffectsImage;
+    [SerializeField]
+    private TextMeshProUGUI killRecordText;
     private void Start()
     {
         if (!PlayerPrefs.HasKey("music"))
@@ -25,7 +28,7 @@ public class MainMenuFunc : MonoBehaviour
         }
         else
         {
-            
+
             if (PlayerPrefs.GetInt("music")==1)
             {
                 musicImage.color = Color.white;
@@ -35,8 +38,8 @@ public class MainMenuFunc : MonoBehaviour
 
                 musicImage.color = offColor;
             }
-        }    
-        
+        }
+
         if (!PlayerPrefs.HasKey("soundEffects"))
         {
             PlayerPrefs.SetInt("soundEffects",1);
@@ -44,7 +47,7 @@ public class MainMenuFunc : MonoBehaviour
         }
         else
         {
-            
+
             if (PlayerPrefs.GetInt("soundEffects")==1)
             {
                 soundEffectsImage.color = Color.white;
@@ -54,7 +57,13 @@ public class MainMenuFunc : MonoBehaviour
 
                 soundEffectsImage.color = offColor;
             }
-        }    
+        }
+        if (!PlayerPrefs.HasKey("killCount"))
+        {
+            PlayerPrefs.SetInt("killCount",0);
+        }
+
+        killRecordText.text="Kill record: "+PlayerPrefs.GetInt("killCount");
     }
 
     public void PressedStart(){
@@ -62,7 +71,7 @@ public class MainMenuFunc : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     public void PressedExit(){
-        
+
         Application.Quit();
     }
     public void PressedMusicOff(){
@@ -91,14 +100,14 @@ public class MainMenuFunc : MonoBehaviour
             PlayerPrefs.SetInt("soundEffects",1);
             soundEffectsImage.color = Color.white;
         }
-        
+
     }
     public void PressedTutorial(){
         SceneManager.LoadScene(2);
-        
+
     }
 
-    
-    
+
+
 
 }

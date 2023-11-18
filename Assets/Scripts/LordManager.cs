@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LordManager : MonoBehaviour
 {
-    
+
     private Castle teleportedCastle;
     public VillageManager villageManager;
     public CastleManager castleManager;
@@ -24,6 +24,7 @@ public class LordManager : MonoBehaviour
             }else if (lord1.soldierCount<lord2.soldierCount)
             {
                 Debug.Log(lord2.name+" wins");
+
                 LordWinner(lord2);
                 LordLosing(lord1);
             }
@@ -69,20 +70,20 @@ public class LordManager : MonoBehaviour
             lord.SoldierCountUpdate(teleportedCastle.garrison/2);
             teleportedCastle.GarrisonUpdate(teleportedCastle.garrison/2);
 
-        
+
         if (lord.castles.Count==0 || lord.soldierCount<=0)
         {
-            
+
             if (playerManager.player.gameObject==lord.gameObject)
             {
-                playerManager.Death();   
+                playerManager.Death();
             }else
             {
-                
+
             Destroy(lord.gameObject);
             }
 
-            
+
         }
     }
     public void GetSoldierFromVillage(Lord lord,Village village){
@@ -100,7 +101,7 @@ public class LordManager : MonoBehaviour
     public void ConqueuerTheCastle(Lord lord,Castle castle){
         if (lord.canConquer(castle))
         {
-        
+
         castleManager.Conquer(lord,castle);
         }
         // lord health will decrease by timer

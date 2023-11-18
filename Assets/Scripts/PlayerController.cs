@@ -25,29 +25,30 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown("Cancel")){
             SceneManager.LoadScene(0);
         }
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             firstClickedPosition = Input.mousePosition;
         }
-        
+
         if (Input.GetMouseButton(0))
          {
-            Move();   
-            
+            Move();
+
          }else
          {
-        rb.velocity=Vector2.zero;
+         rb.velocity=Vector2.zero;
         }
     }
     private void Move(){
-        
+
         worldPosition = Input.mousePosition;
-        
-        
+
+
         Vector3 difference=worldPosition-firstClickedPosition;
+
         difference.Normalize();
-        
+
         rb.velocity=new Vector2(difference.x,difference.y)*lord.speed;
 
     }
