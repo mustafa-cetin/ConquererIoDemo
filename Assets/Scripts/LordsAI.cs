@@ -61,7 +61,7 @@ public class LordsAI : MonoBehaviour
             }
         }
         return willReturn;
-        
+
         }
         else
         {
@@ -77,7 +77,7 @@ public class LordsAI : MonoBehaviour
         {
             if (item.gameObject.CompareTag("Village"))
             {
-                if (item.GetComponent<Village>().canTakeSoldier()) 
+                if (item.GetComponent<Village>().canTakeSoldier())
                 {
                     Villages.Add(item);
                 }
@@ -120,7 +120,7 @@ public class LordsAI : MonoBehaviour
             }
         }
         return willReturn;
-        
+
         }
         else
         {
@@ -145,7 +145,7 @@ public class LordsAI : MonoBehaviour
             }
         }
         return willReturn;
-        
+
         }
         else
         {
@@ -180,10 +180,10 @@ public class LordsAI : MonoBehaviour
     {
         if (!lord.onConquest)
         {
-          
+
         if (DeterminingClosestUnderAttackCastle() != null)
         {
-            
+
             if (DeterminingClosestUnderAttackCastle().Conquerer != null)
             {
                 Vector3 difference = DeterminingClosestUnderAttackCastle().Conquerer.transform.position - this.transform.position;
@@ -191,7 +191,7 @@ public class LordsAI : MonoBehaviour
                 rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed;
                 Debug.Log(lord.name+"kalesi saldırı altında koşuyor");
             }
-        }    
+        }
 
         else if (DeterminingClosestEnemy() != null)
         {
@@ -232,10 +232,10 @@ public class LordsAI : MonoBehaviour
                     rb.velocity = new Vector2(difference.x, difference.y) * 1 * lord.speed * -1;
                     Debug.Log(lord.name+"köy yok admın canı daha fazla kaçıyor");
                 }
-                
+
             }
         }else if (DeterminingClosestVillage() != null && DeterminingClosestCastle() != null)
-        
+
         {
             Castle castle=DeterminingClosestCastle().GetComponent<Castle>();
             if (castle.garrison*1.5f<lord.soldierCount)

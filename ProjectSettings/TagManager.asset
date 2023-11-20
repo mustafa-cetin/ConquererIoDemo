@@ -14,9 +14,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Castle
+  - Village
+  - Lord
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: FloatingText
+    uniqueID: 283573235
     locked: 0

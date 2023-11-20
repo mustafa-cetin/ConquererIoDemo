@@ -10,7 +10,7 @@ public class Lord : MonoBehaviour
     public int soldierCount;
     public Color lordsColor;
     private SpriteRenderer spriteRenderer;
-    
+
 
     public TextMeshProUGUI textComp;
     public bool onFight=false;
@@ -22,7 +22,7 @@ public class Lord : MonoBehaviour
     public bool onConquest;
     public Castle whatIConquering;
     private void Awake() {
-        
+
     }
     void Start()
     {
@@ -38,16 +38,16 @@ public class Lord : MonoBehaviour
         ConquestCooldownSetting();
     }
     private void FightCooldownSetting(){
-        
+
         if (fightCooldown<=0)
         {
             onFight=false;
-            
+
         }else
         {
             onFight=true;
             fightCooldown-=Time.deltaTime;
-            
+
         }
     }
     private void ConquestCooldownSetting(){
@@ -65,41 +65,41 @@ public class Lord : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D other) {
         if (other.gameObject.CompareTag("Lord") )
-        {   
+        {
             lordManager.OnFight(other.gameObject.GetComponent<Lord>(),this);
 
         }
-        
+
         if (other.gameObject.CompareTag("Village") )
-        {   
+        {
             lordManager.GetSoldierFromVillage(this,other.gameObject.GetComponent<Village>());
         }
-        
+
         if (other.gameObject.CompareTag("Castle") )
-        {   
-            
+        {
+
             lordManager.ConqueuerTheCastle(this,other.gameObject.GetComponent<Castle>());
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D other) {
          if (other.gameObject.CompareTag("Castle") )
-        {   
+        {
             Castle castle=other.gameObject.GetComponent<Castle>();
-            
+
             if (!castles.Contains(castle)&&!castle.underAttack)
             {
             whatIConquering=castle;
             castle.Conquerer=this;
             castle.underAttack=true;
             }
-        
+
         }
     }
     private void OnCollisionExit2D(Collision2D other) {
-        
+
         if (other.gameObject.CompareTag("Castle") )
-        {   
+        {
             Castle castle=other.gameObject.GetComponent<Castle>();
 
         if (!castles.Contains(castle)&&castle.underAttack)
@@ -112,7 +112,7 @@ public class Lord : MonoBehaviour
             castle.Conquerer=null;
             castle.underAttack=false;
         }
-        
+
         }
     }
     private void SpeedoSystem(){
@@ -124,7 +124,7 @@ public class Lord : MonoBehaviour
 
         speed *= 1.5f;
     }
-    
+
     public bool canConquer(Castle castle){
         if (soldierCount>=10 && !castles.Contains(castle))
         {
