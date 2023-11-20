@@ -64,19 +64,19 @@ public class PlayerManager : MonoBehaviour
 
         killCount+=1;
         killCountText.text="Kill: "+killCount;
-        PlayerPrefs.SetInt("killCount",killCount);
+        SetMaxKillCount(killCount);
     }
     public void Death(){
         audioSource.Stop();
         endKillText.text="KILL COUNT: "+killCount.ToString();
-        PlayerPrefs.SetInt("killCount",killCount);
+        SetMaxKillCount(killCount);
         endGameScreen.SetActive(true);
         Time.timeScale=0;
     }
     public void Win(){
         audioSource.Stop();
         endKillText.text="KILL COUNT: "+killCount.ToString();
-        PlayerPrefs.SetInt("killCount",killCount);
+        SetMaxKillCount(killCount);
         endGameScreen.SetActive(true);
         Time.timeScale=0;
     }
@@ -106,7 +106,7 @@ public class PlayerManager : MonoBehaviour
         playedSong=true;
             }
         winKillText.text="KILL COUNT: "+killCount.ToString();
-        PlayerPrefs.SetInt("killCount",killCount);
+        SetMaxKillCount(killCount);
         endWinGameScreen.SetActive(true);
         Time.timeScale=0;
         }
@@ -114,5 +114,12 @@ public class PlayerManager : MonoBehaviour
     public void RestartGame(){
         Time.timeScale=1;
 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void SetMaxKillCount(int killCount){
+        if (PlayerPrefs.GetInt("killCount")<killCount)
+        {
+            PlayerPrefs.SetInt("killCount",killCount);
+        }
     }
 }
