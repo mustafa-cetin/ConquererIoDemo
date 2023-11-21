@@ -1,26 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using UnityEngine;
 
 public class LordBot : MonoBehaviour
 {
-
+    public FiniteStateMachine stateMachine;
 
     [SerializeField]
     private D_LordBot lordBotData;
 
     private Lord lord;
     private Rigidbody2D rb;
-
+    public Seeker Seeker{get;private set;}
     private LayerMask castleLayer;
     private LayerMask villageLayer;
     private LayerMask lordLayer;
+
+
+
     void Start()
     {
-
+        Seeker=GetComponent<Seeker>();
         lord=GetComponent<Lord>();
         rb=GetComponent<Rigidbody2D>();
+        stateMachine=new FiniteStateMachine();
 
 
         castleLayer=LayerMask.GetMask("Castle");
@@ -32,7 +37,10 @@ public class LordBot : MonoBehaviour
 
     void Update()
     {
-
+        stateMachine.currentState.LogicUpdate();
+    }
+     private void FixedUpdate() {
+        stateMachine.currentState.PhysicsUpdate();
     }
 
 
